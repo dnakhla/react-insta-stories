@@ -7,7 +7,6 @@
 
 <div align="center"><a href="https://www.npmjs.com/package/react-insta-stories"><img alt="NPM" src="https://img.shields.io/npm/v/react-insta-stories.svg"></a>&nbsp;<a href="https://standardjs.com"><img alt="JavaScript Style Guide" src="https://img.shields.io/badge/code_style-standard-brightgreen.svg"></a>&nbsp;<a href="#backers"><img alt="Backers on Open Collective" src="https://opencollective.com/react-insta-stories/backers/badge.svg"></a>&nbsp;<a href="#sponsors"><img alt="Sponsors on Open Collective" src="https://opencollective.com/react-insta-stories/sponsors/badge.svg"></a></div>
 
-Slides for React Bangalore meetup (view on desktop): https://inspiring-hawking-401dfc.netlify.com/
 ## What's new in v2? 🚀
 
 -   Render your own components/JSX in stories
@@ -37,8 +36,6 @@ See it in action here: https://mohitk05.github.io/react-insta-stories/
 
 ## Usage
 
-
-
 ```jsx
 import React, { Component } from 'react';
 
@@ -58,19 +55,6 @@ class App extends Component {
 }
 
 const stories = [
- 	//🆕! Rendering Components instead of video or images can now be done by passing a 'content' property into the story. 
-	//The props contain properties 'action'(fn) and 'isPaused'(bool)
-  	{
-                content: ({action, isPaused}) => {
-		  const handleClick=(e)=>{e.preventDefault(); action(isPaused ? 'play': 'pause') };
-                  return (
-                    <div onClick={handleClick}>
-                  	<h2>Hi</h2>
-			<span>{isPaused ? 'Paused' : 'Playing'}</span>
-                    </div>
-                  );
-                }
-        },
 	{
 		url: 'https://picsum.photos/1080/1920',
 		seeMore: ({ close }) => (
@@ -168,9 +152,9 @@ storyContent: {
 }
 ```
 
-## API
+## API (only for v1)
 
-_**APIs will be deprecated from v2, and will be replaced by props based control. Check out '⭐️ new props' in the props table above.**_
+🚨 _**APIs will be deprecated from v2, and will be replaced by props based control. Check out '⭐️ new props' in the props table above.**_
 
 Following functions can be accessed using the `ref` of default export, e.g. `this.stories.pause()`
 
