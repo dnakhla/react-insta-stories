@@ -112,7 +112,8 @@ export default function() {
     if (loop && callbackOverride) {
       updateNextStoryIdForLoop();
     } else if (callbackOverride) {
-      setCount(callbackOverride);
+      setCurrentId(callbackOverride);
+      setCount(0);
     } else {
       updateNextStoryId();
     }
