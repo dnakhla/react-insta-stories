@@ -47,5 +47,7 @@
 	"peerDependencies": {
 		"react": "^16.8.2"
 	},
-	"dependencies": {}
+	"dependencies": {
+		"react-insta-stories": "dnakhla/react-insta-stories.git"
+	}
 }
