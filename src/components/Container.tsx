@@ -94,7 +94,7 @@ export default function () {
 
     const next = () => {
         let callbackOverride = storyEndCallback()
-        if (loop) {
+        if (loop && callbackOverride) {
             updateNextStoryIdForLoop()
         } else if(callbackOverride) {
             updateNextStoryId()
