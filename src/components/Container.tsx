@@ -81,7 +81,7 @@ export default function() {
   };
 
   const storyEndCallback = () => {
-    return onStoryEnd ? onStoryEnd(currentId, stories[currentId]) : true;
+    return onStoryEnd ? onStoryEnd(currentId, stories[currentId]) : false;
   };
 
   const allStoriesEndCallback = () => {
@@ -109,11 +109,15 @@ export default function() {
 
   const next = () => {
     let callbackOverride = storyEndCallback();
-    if (loop && callbackOverride) {
-      updateNextStoryIdForLoop();
-    } else if (callbackOverride) {
+   console.log({callbackOverride},{currentId});
+    if (callbackOverride) {
       setCurrentId(callbackOverride);
       setCount(0);
+      return;
+    }
+
+    if (loop) {
+      updateNextStoryIdForLoop();
     } else {
       updateNextStoryId();
     }
