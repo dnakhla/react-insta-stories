@@ -81,7 +81,9 @@ export default function() {
   };
 
   const storyEndCallback = () => {
-    return onStoryEnd ? onStoryEnd(currentId, stories[currentId]) : false;
+    return onStoryEnd
+      ? onStoryEnd(currentId, isPaused, stories[currentId])
+      : false;
   };
 
   const allStoriesEndCallback = () => {
@@ -109,7 +111,7 @@ export default function() {
 
   const next = () => {
     let callbackOverride = storyEndCallback();
-   console.log({callbackOverride},{currentId});
+    console.log({ callbackOverride }, { currentId });
     if (callbackOverride) {
       setCurrentId(callbackOverride);
       setCount(0);
