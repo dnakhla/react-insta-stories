@@ -5,8 +5,7 @@ const GlobalContext = React.createContext<GlobalCtx>({
     stories: [],
     defaultInterval: 4000,
     width: 360,
-    height: 640,
-    isPaused:false
+    height: 640
 })
 
 export default GlobalContext
