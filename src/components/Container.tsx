@@ -82,7 +82,7 @@ export default function() {
 
   const storyEndCallback = () => {
     return onStoryEnd
-      ? onStoryEnd(currentId, isPaused, stories[currentId])
+      ? onStoryEnd(currentId, pause, stories[currentId])
       : false;
   };
 
